@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Career Qualification Page</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -17,16 +18,17 @@
     }
 
     body{
-      min-height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:linear-gradient(135deg,#eef6ff,#dff1ff);
-      overflow:hidden;
-      position:relative;
-    }
-
-    /* Background Shapes */
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  background:linear-gradient(135deg,#eef6ff,#dff1ff);
+  overflow-y:auto;
+  overflow-x:hidden;
+  position:relative;
+  padding:40px 20px;
+}
+    /* Background */
 
     .shape1{
       position:absolute;
@@ -52,73 +54,66 @@
       opacity:0.65;
     }
 
-    /* Main Card */
+    /* Card */
 
     .qualification-card{
-      width:100%;
-      max-width:950px;
-      background:rgba(255,255,255,0.96);
-      border-radius:30px;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      box-shadow:0 20px 45px rgba(0,0,0,0.12);
-      position:relative;
-      z-index:5;
-    }
+  width:100%;
+  max-width:1000px;
+  background:white;
+  border-radius:30px;
+  overflow:visible;
+  display:flex;
+  box-shadow:0 20px 45px rgba(0,0,0,0.12);
+  position:relative;
+  z-index:5;
+  margin-bottom:40px;
+}
 
     /* Left Side */
 
     .left-section{
-      width:50%;
+      width:45%;
       background:linear-gradient(135deg,#0d7be0,#17b5ff);
       color:white;
-      padding:60px 40px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      padding:50px 35px;
       text-align:center;
     }
 
     .left-section h1{
       font-size:42px;
-      margin-bottom:20px;
       line-height:1.2;
+      margin-bottom:20px;
+      font-weight:700;
     }
 
     .left-section p{
-      font-size:16px;
+      font-size:17px;
       line-height:1.8;
-      margin-bottom:30px;
-    }
-
-    .left-section img{
-      width:100%;
       max-width:350px;
-      animation:float 4s ease-in-out infinite;
-    }
-
-    @keyframes float{
-      0%{transform:translateY(0px);}
-      50%{transform:translateY(-12px);}
-      100%{transform:translateY(0px);}
     }
 
     /* Right Side */
 
     .right-section{
-      width:50%;
-      padding:55px 45px;
+      width:55%;
+      padding:50px 45px;
     }
 
     .title{
-      font-size:36px;
-      color:#1d2c39;
-      margin-bottom:12px;
+      font-size:40px;
       font-weight:700;
+      color:#1c2b39;
+      margin-bottom:10px;
     }
 
     .subtitle{
       color:#6d7b88;
-      line-height:1.7;
-      margin-bottom:35px;
+      line-height:1.8;
+      margin-bottom:30px;
       font-size:15px;
     }
 
@@ -134,8 +129,8 @@
       color:#243547;
     }
 
-    .input-group select,
-    .input-group input{
+    .input-group input,
+    .input-group select{
       width:100%;
       padding:15px 16px;
       border:1px solid #d7e4ef;
@@ -143,19 +138,29 @@
       outline:none;
       font-size:15px;
       transition:0.3s;
+      background:white;
     }
 
-    .input-group select:focus,
-    .input-group input:focus{
+    .input-group input:focus,
+    .input-group select:focus{
       border-color:#1198ff;
       box-shadow:0 0 0 4px rgba(17,152,255,0.12);
     }
+
+    .message{
+      margin-top:-10px;
+      margin-bottom:20px;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    /* Button */
 
     .continue-btn{
       width:100%;
       padding:16px;
       border:none;
-      border-radius:15px;
+      border-radius:16px;
       background:linear-gradient(to right,#0d7be0,#17b5ff);
       color:white;
       font-size:16px;
@@ -176,7 +181,6 @@
     @media(max-width:900px){
 
       body{
-        padding:20px;
         overflow:auto;
       }
 
@@ -189,13 +193,24 @@
         width:100%;
       }
 
-      .left-section{
-        padding:45px 30px;
-      }
-
       .right-section{
         padding:40px 25px;
       }
+
+      .left-section{
+        padding:40px 25px;
+      }
+
+      .left-section h1{
+        font-size:34px;
+      }
+
+      .title{
+        font-size:32px;
+      }
+      html{
+  scroll-behavior:smooth;
+}
 
     }
 
@@ -212,7 +227,7 @@
 
   <div class="qualification-card">
 
-    <!-- Left Side -->
+    <!-- Left -->
 
     <div class="left-section">
 
@@ -225,224 +240,208 @@
 
     </div>
 
-    <!-- Right Side -->
+    <!-- Right -->
 
     <div class="right-section">
 
       <h2 class="title">Qualification Details</h2>
 
       <p class="subtitle">
-        Select your education qualification to continue and explore
-        suitable courses and career paths.
+        Select your education qualification to continue and
+        explore suitable courses and career paths.
       </p>
 
       <form>
+
         <!-- Age -->
 
-<div class="input-group">
-  <label>Age</label>
+        <div class="input-group">
 
-  <input 
-    type="number" 
-    placeholder="Enter your age"
-    min="1"
-    max="100"
-  >
-</div>
+          <label>Age</label>
+
+          <input
+            type="number"
+            placeholder="Enter your age"
+            min="1"
+            max="100"
+          >
+
+        </div>
 
         <!-- Qualification -->
 
-<div class="input-group">
-  <label>Select Qualification</label>
+        <div class="input-group">
 
-  <select>
-    <option>Select Qualification</option>
+          <label>Select Qualification</label>
 
-    <option>10th Pass</option>
-    <option>12th Pass</option>
+          <select id="qualification" onchange="checkQualification()">
 
-    <option>ITI</option>
-    <option>Diploma</option>
+            <option value="">Select Qualification</option>
 
-    <option>B.A</option>
-    <option>B.Sc</option>
-    <option>B.Com</option>
-    <option>BCA</option>
-    <option>BBA</option>
-    <option>B.Tech</option>
-    <option>B.Ed</option>
+            <option value="10th">10th Pass</option>
 
-    <option>M.A</option>
-    <option>M.Sc</option>
-    <option>M.Com</option>
-    <option>MCA</option>
-    <option>MBA</option>
-    <option>M.Tech</option>
+            <option value="12th">12th Pass</option>
 
-    <option>PhD</option>
+            <option value="ITI">ITI</option>
 
-    <option>Other</option>
-    <option>None</option>
+            <option value="Diploma">Diploma</option>
 
-  </select>
-</div>
-<!-- Education Board -->
+            <option value="BA">B.A</option>
 
-<div class="input-group">
-  <label>Select Education Board</label>
+            <option value="BSc">B.Sc</option>
 
-  <select id="boardSelect" onchange="checkBoard()">
+            <option value="BCom">B.Com</option>
 
-    <option value="">Select Board</option>
+            <option value="BCA">BCA</option>
 
-    <!-- West Bengal -->
+            <option value="BBA">BBA</option>
 
-    <option value="available">WBBSE - West Bengal Board of Secondary Education</option>
+            <option value="BTech">B.Tech</option>
 
-    <option value="available">WBCHSE - West Bengal Council of Higher Secondary Education</option>
+            <option value="BEd">B.Ed</option>
 
-    <!-- Central -->
+            <option value="MA">M.A</option>
 
-    <option value="not">CBSE - Central Board of Secondary Education</option>
+            <option value="MSc">M.Sc</option>
 
-    <option value="not">ICSE - Indian Certificate of Secondary Education</option>
+            <option value="MCom">M.Com</option>
 
-    <!-- Other States -->
+            <option value="MCA">MCA</option>
 
-    <option value="not">BSEB - Bihar School Examination Board</option>
+            <option value="MBA">MBA</option>
 
-    <option value="not">UPMSP - Uttar Pradesh Board</option>
+            <option value="MTech">M.Tech</option>
 
-    <option value="not">MBOSE - Meghalaya Board</option>
+            <option value="PhD">PhD</option>
 
-    <option value="not">SEBA - Assam Board</option>
+            <option value="Other">Other</option>
 
-    <option value="not">RBSE - Rajasthan Board</option>
+            <option value="None">None</option>
 
-    <option value="not">PSEB - Punjab Board</option>
+          </select>
 
-    <option value="not">TBSE - Tripura Board</option>
+        </div>
 
-    <option value="not">NBSE - Nagaland Board</option>
+        <!-- Education Board -->
 
-    <option value="not">JKBOSE - Jammu & Kashmir Board</option>
+        <div class="input-group">
 
-    <option value="not">BSEM - Manipur Board</option>
+          <label>Select Education Board</label>
 
-    <option value="not">CGBSE - Chhattisgarh Board</option>
+          <select id="boardSelect" onchange="checkBoard()">
 
-    <option value="not">GSEB - Gujarat Board</option>
+            <option value="">Select Board</option>
 
-    <option value="not">BSE Odisha - Odisha Board</option>
+            <option value="available">
+              WBBSE - West Bengal Board of Secondary Education
+            </option>
 
-    <option value="not">MSBSHSE - Maharashtra Board</option>
+            <option value="available">
+              WBCHSE - West Bengal Council of Higher Secondary Education
+            </option>
 
-    <option value="not">KSEAB - Karnataka Board</option>
+            <option value="not">
+              CBSE - Central Board of Secondary Education
+            </option>
 
-    <option value="not">TNBSE - Tamil Nadu Board</option>
+            <option value="not">
+              ICSE - Indian Certificate of Secondary Education
+            </option>
 
-    <option value="not">APBIE - Andhra Pradesh Board</option>
+            <option value="not">
+              BSEB - Bihar School Examination Board
+            </option>
 
-    <option value="not">TSBIE - Telangana Board</option>
+            <option value="not">
+              UPMSP - Uttar Pradesh Board
+            </option>
 
-    <option value="not">HPBOSE - Himachal Pradesh Board</option>
+            <option value="not">
+              RBSE - Rajasthan Board
+            </option>
 
-    <option value="not">Goa Board</option>
+            <option value="not">
+              MSBSHSE - Maharashtra Board
+            </option>
 
-    <option value="not">Kerala Board</option>
+            <option value="not">
+              Karnataka Board
+            </option>
 
-    <option value="not">Mizoram Board</option>
+            <option value="not">
+              Tamil Nadu Board
+            </option>
 
-    <option value="not">Arunachal Pradesh Board</option>
+          </select>
 
-    <option value="not">Sikkim Board</option>
+        </div>
 
-  </select>
-</div>
+        <!-- Board Message -->
 
-<!-- Status Message -->
+        <p id="boardMessage" class="message"></p>
 
-<p id="boardMessage" style="
-  margin-top:-10px;
-  margin-bottom:20px;
-  font-size:14px;
-  font-weight:600;
-"></p>
-<!-- Stream / Subject -->
+        <!-- Stream -->
 
-<div class="input-group">
-  <label>Select Stream / Subject</label>
+        <div class="input-group">
 
-  <select>
-    <option>Select Stream</option>
+          <label>Select Stream / Subject</label>
 
-    <option>Science</option>
-    <option>Commerce</option>
-    <option>Arts</option>
+          <select id="stream">
 
-    <option>Physics</option>
-    <option>Chemistry</option>
-    <option>Mathematics</option>
-    <option>Biology</option>
+            <option value="">Select Stream</option>
 
-    <option>Computer Science</option>
-    <option>Information Technology</option>
+            <option>Science</option>
 
-    <option>Mechanical Engineering</option>
-    <option>Civil Engineering</option>
-    <option>Electrical Engineering</option>
-    <option>Electronics Engineering</option>
+            <option>Commerce</option>
 
-    <option>Accounting</option>
-    <option>Finance</option>
-    <option>Economics</option>
+            <option>Arts</option>
 
-    <option>History</option>
-    <option>Political Science</option>
-    <option>Geography</option>
-    <option>English</option>
+            <option>Computer Science</option>
 
-    <option>Management</option>
-    <option>Marketing</option>
-    <option>Human Resource</option>
+            <option>Engineering</option>
 
-    <option>General</option>
-    <option>All Streams</option>
-    <option>None</option>
-    <option>Other</option>
-  </select>
-</div>
+            <option>General</option>
 
-<!-- Qualifying Year -->
+            <option>Other</option>
 
-<div class="input-group">
-  <label>Qualifying Year</label>
+          </select>
 
-  <select>
-    <option>Select Year</option>
+        </div>
 
-    <option>2026</option>
-    <option>2025</option>
-    <option>2024</option>
-    <option>2023</option>
-    <option>2022</option>
-    <option>2021</option>
-    <option>2020</option>
-    <option>2019</option>
-    <option>2018</option>
-    <option>2017</option>
-    <option>2016</option>
-    <option>2015</option>
-    <option>2014</option>
-    <option>2013</option>
-    <option>2012</option>
-    <option>2011</option>
-    <option>2010</option>
+        <!-- Stream Message -->
 
-    <option>Appearing</option>
-    <option>Not Applicable</option>
-  </select>
-</div>
+        <p id="streamMessage" class="message"></p>
+
+        <!-- Year -->
+
+        <div class="input-group">
+
+          <label>Qualifying Year</label>
+
+          <select>
+
+            <option>Select Year</option>
+
+            <option>2026</option>
+            <option>2025</option>
+            <option>2024</option>
+            <option>2023</option>
+            <option>2022</option>
+            <option>2021</option>
+            <option>2020</option>
+            <option>2019</option>
+            <option>2018</option>
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+
+            <option>Appearing</option>
+
+          </select>
+
+        </div>
+
+        <!-- Button -->
 
         <button class="continue-btn">
           Continue
@@ -454,36 +453,79 @@
 
   </div>
 
+  <script>
+
+    function checkBoard(){
+
+      const board =
+        document.getElementById("boardSelect").value;
+
+      const msg =
+        document.getElementById("boardMessage");
+
+      if(board === "available"){
+
+        msg.innerHTML =
+          "✅ Available for West Bengal Board";
+
+        msg.style.color = "green";
+
+      }
+
+      else if(board === "not"){
+
+        msg.innerHTML =
+          "❌ This board is not available now";
+
+        msg.style.color = "red";
+
+      }
+
+      else{
+
+        msg.innerHTML = "";
+
+      }
+
+    }
+
+    function checkQualification(){
+
+      const qualification =
+        document.getElementById("qualification").value;
+
+      const stream =
+        document.getElementById("stream");
+
+      const msg =
+        document.getElementById("streamMessage");
+
+      if(qualification === "10th"){
+
+        stream.disabled = true;
+
+        stream.style.background = "#eeeeee";
+
+        msg.innerHTML =
+          "✅ No stream required for 10th students";
+
+        msg.style.color = "green";
+
+      }
+
+      else{
+
+        stream.disabled = false;
+
+        stream.style.background = "#ffffff";
+
+        msg.innerHTML = "";
+
+      }
+
+    }
+
+  </script>
+
 </body>
 </html>
-<script>
-
-function checkBoard(){
-
-  const board = document.getElementById("boardSelect").value;
-
-  const msg = document.getElementById("boardMessage");
-
-  if(board === "available"){
-
-    msg.innerHTML = "✅ Available for West Bengal Board";
-    msg.style.color = "green";
-
-  }
-
-  else if(board === "not"){
-
-    msg.innerHTML = "❌ This board is not available now";
-    msg.style.color = "red";
-
-  }
-
-  else{
-
-    msg.innerHTML = "";
-
-  }
-
-}
-
-</script>
