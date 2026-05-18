@@ -286,7 +286,88 @@
 
   </select>
 </div>
+<!-- Education Board -->
 
+<div class="input-group">
+  <label>Select Education Board</label>
+
+  <select id="boardSelect" onchange="checkBoard()">
+
+    <option value="">Select Board</option>
+
+    <!-- West Bengal -->
+
+    <option value="available">WBBSE - West Bengal Board of Secondary Education</option>
+
+    <option value="available">WBCHSE - West Bengal Council of Higher Secondary Education</option>
+
+    <!-- Central -->
+
+    <option value="not">CBSE - Central Board of Secondary Education</option>
+
+    <option value="not">ICSE - Indian Certificate of Secondary Education</option>
+
+    <!-- Other States -->
+
+    <option value="not">BSEB - Bihar School Examination Board</option>
+
+    <option value="not">UPMSP - Uttar Pradesh Board</option>
+
+    <option value="not">MBOSE - Meghalaya Board</option>
+
+    <option value="not">SEBA - Assam Board</option>
+
+    <option value="not">RBSE - Rajasthan Board</option>
+
+    <option value="not">PSEB - Punjab Board</option>
+
+    <option value="not">TBSE - Tripura Board</option>
+
+    <option value="not">NBSE - Nagaland Board</option>
+
+    <option value="not">JKBOSE - Jammu & Kashmir Board</option>
+
+    <option value="not">BSEM - Manipur Board</option>
+
+    <option value="not">CGBSE - Chhattisgarh Board</option>
+
+    <option value="not">GSEB - Gujarat Board</option>
+
+    <option value="not">BSE Odisha - Odisha Board</option>
+
+    <option value="not">MSBSHSE - Maharashtra Board</option>
+
+    <option value="not">KSEAB - Karnataka Board</option>
+
+    <option value="not">TNBSE - Tamil Nadu Board</option>
+
+    <option value="not">APBIE - Andhra Pradesh Board</option>
+
+    <option value="not">TSBIE - Telangana Board</option>
+
+    <option value="not">HPBOSE - Himachal Pradesh Board</option>
+
+    <option value="not">Goa Board</option>
+
+    <option value="not">Kerala Board</option>
+
+    <option value="not">Mizoram Board</option>
+
+    <option value="not">Arunachal Pradesh Board</option>
+
+    <option value="not">Sikkim Board</option>
+
+  </select>
+</div>
+
+<!-- Status Message -->
+
+<p id="boardMessage" style="
+  margin-top:-10px;
+  margin-bottom:20px;
+  font-size:14px;
+  font-weight:600;
+"></p>
 <!-- Stream / Subject -->
 
 <div class="input-group">
@@ -375,3 +456,34 @@
 
 </body>
 </html>
+<script>
+
+function checkBoard(){
+
+  const board = document.getElementById("boardSelect").value;
+
+  const msg = document.getElementById("boardMessage");
+
+  if(board === "available"){
+
+    msg.innerHTML = "✅ Available for West Bengal Board";
+    msg.style.color = "green";
+
+  }
+
+  else if(board === "not"){
+
+    msg.innerHTML = "❌ This board is not available now";
+    msg.style.color = "red";
+
+  }
+
+  else{
+
+    msg.innerHTML = "";
+
+  }
+
+}
+
+</script>
