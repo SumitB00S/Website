@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forgot Password</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#eef6ff,#dff1ff);
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* Background Shapes */
+
+    .shape1{
+      position:absolute;
+      width:420px;
+      height:420px;
+      background:#0d7be0;
+      top:-180px;
+      right:-120px;
+      border-radius:50px;
+      transform:rotate(25deg);
+      opacity:0.9;
+    }
+
+    .shape2{
+      position:absolute;
+      width:320px;
+      height:320px;
+      background:#53c7ff;
+      bottom:-120px;
+      left:-120px;
+      border-radius:50px;
+      transform:rotate(25deg);
+      opacity:0.7;
+    }
+
+    /* Main Card */
+
+    .forgot-card{
+      width:100%;
+      max-width:430px;
+      background:rgba(255,255,255,0.96);
+      padding:45px 35px;
+      border-radius:28px;
+      position:relative;
+      z-index:5;
+      box-shadow:0 18px 40px rgba(0,0,0,0.12);
+      backdrop-filter:blur(10px);
+      text-align:center;
+    }
+
+    .forgot-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:7px;
+      border-radius:28px 28px 0 0;
+      background:linear-gradient(to right,#0d7be0,#19b7ff);
+    }
+
+    .icon{
+      width:90px;
+      height:90px;
+      margin:auto;
+      margin-bottom:20px;
+      border-radius:50%;
+      background:linear-gradient(to right,#0d7be0,#19b7ff);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      color:white;
+      font-size:40px;
+      box-shadow:0 10px 20px rgba(13,123,224,0.25);
+    }
+
+    h1{
+      font-size:34px;
+      color:#1e2c39;
+      margin-bottom:12px;
+    }
+
+    .subtitle{
+      color:#6d7c8b;
+      font-size:15px;
+      line-height:1.7;
+      margin-bottom:30px;
+    }
+
+    .input-group{
+      text-align:left;
+      margin-bottom:22px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+      font-weight:600;
+      color:#253547;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:15px 16px;
+      border:1px solid #d6e5f2;
+      border-radius:14px;
+      outline:none;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .input-group input:focus{
+      border-color:#1198ff;
+      box-shadow:0 0 0 4px rgba(17,152,255,0.12);
+    }
+
+    .reset-btn{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:15px;
+      background:linear-gradient(to right,#0d7be0,#17b5ff);
+      color:white;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 10px 22px rgba(13,123,224,0.25);
+    }
+
+    .reset-btn:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 28px rgba(13,123,224,0.35);
+    }
+
+    .bottom-link{
+      margin-top:22px;
+      font-size:15px;
+      color:#657381;
+    }
+
+    .bottom-link a{
+      color:#0d7be0;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    .bottom-link a:hover{
+      text-decoration:underline;
+    }
+
+    @media(max-width:500px){
+
+      .forgot-card{
+        margin:20px;
+        padding:40px 25px;
+      }
+
+      h1{
+        font-size:28px;
+      }
+
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Shapes -->
+
+  <div class="shape1"></div>
+  <div class="shape2"></div>
+
+  <!-- Forgot Password Card -->
+
+  <div class="forgot-card">
+
+    <div class="icon">
+      🔒
+    </div>
+
+    <h1>Forgot Password?</h1>
+
+    <p class="subtitle">
+      Enter your registered email address below.
+      We will send you a password reset link.
+    </p>
+
+    <form>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email">
+      </div>
+
+      <button type="submit" class="reset-btn">
+        Send Reset Link
+      </button>
+
+    </form>
+
+    <div class="bottom-link">
+      Remember your password?
+      <a href="#">Back to Login</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
