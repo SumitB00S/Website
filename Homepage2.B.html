@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Favourite Subject Career Portal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#001f4d,#0059b3,#00aaff);
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Background Animation */
+
+body::before{
+  content:'';
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-250px;
+  right:-200px;
+  animation:move1 8s infinite alternate;
+}
+
+body::after{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:rgba(255,255,255,0.05);
+  border-radius:50%;
+  bottom:-180px;
+  left:-120px;
+  animation:move2 8s infinite alternate;
+}
+
+@keyframes move1{
+  from{
+    transform:translateY(0px);
+  }
+  to{
+    transform:translateY(40px);
+  }
+}
+
+@keyframes move2{
+  from{
+    transform:translateX(0px);
+  }
+  to{
+    transform:translateX(50px);
+  }
+}
+
+/* Container */
+
+.container{
+  width:100%;
+  max-width:1450px;
+  margin:auto;
+  padding:60px 30px;
+  position:relative;
+  z-index:10;
+}
+
+/* Heading */
+
+.heading{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.heading h1{
+  font-size:68px;
+  color:white;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+
+  text-shadow:
+  0 0 15px rgba(255,255,255,0.5),
+  0 0 35px rgba(0,255,255,0.4);
+
+  animation:glow 2s infinite alternate;
+}
+
+.heading p{
+  margin-top:18px;
+  font-size:20px;
+  color:#dbeafe;
+  letter-spacing:1px;
+}
+
+@keyframes glow{
+  from{
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px #00c3ff;
+  }
+
+  to{
+    text-shadow:
+    0 0 20px #fff,
+    0 0 45px #00e1ff;
+  }
+}
+
+/* Subject Grid */
+
+.subject-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:35px;
+}
+
+/* Card */
+
+.card{
+  position:relative;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(14px);
+  border-radius:35px;
+  padding:35px 25px;
+  overflow:hidden;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+  0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card:hover{
+  transform:translateY(-15px) scale(1.04);
+
+  box-shadow:
+  0 0 30px rgba(255,255,255,0.4),
+  0 0 60px rgba(0,170,255,0.3);
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-60px;
+  right:-60px;
+}
+
+/* Circle */
+
+.circle{
+  width:145px;
+  height:145px;
+  border-radius:50%;
+  margin:auto;
+
+  background:linear-gradient(135deg,#ffffff,#dbeafe);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:
+  0 10px 25px rgba(255,255,255,0.35);
+
+  animation:float 3s ease-in-out infinite;
+}
+
+.circle img{
+  width:85px;
+  height:85px;
+  object-fit:contain;
+}
+
+/* Floating */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* Title */
+
+.title{
+  text-align:center;
+  margin-top:28px;
+  color:white;
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* Button */
+
+.btn{
+  margin-top:22px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+
+  background:linear-gradient(to right,#00aaff,#0077ff);
+
+  color:white;
+  font-size:16px;
+  font-weight:600;
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+
+  background:linear-gradient(to right,#0077ff,#00c3ff);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .heading h1{
+    font-size:40px;
+  }
+
+  .heading p{
+    font-size:16px;
+  }
+
+  .circle{
+    width:120px;
+    height:120px;
+  }
+
+  .circle img{
+    width:70px;
+    height:70px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Heading -->
+
+  <div class="heading">
+
+    <h1>📚 Choose Favourite Subject</h1>
+
+    <p>
+      Discover careers based on your favourite subjects
+    </p>
+
+  </div>
+
+  <!-- Subject Cards -->
+
+  <div class="subject-grid">
+
+    <!-- Mathematics -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920277.png">
+      </div>
+
+      <div class="title">Mathematics</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Physics -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/2941/2941552.png">
+      </div>
+
+      <div class="title">Physics</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Chemistry -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/3313/3313480.png">
+      </div>
+
+      <div class="title">Chemistry</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Biology -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/3063/3063188.png">
+      </div>
+
+      <div class="title">Biology</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Computer Science -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
+      </div>
+
+      <div class="title">Computer Science</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- English -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/2436/2436874.png">
+      </div>
+
+      <div class="title">English</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- History -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png">
+      </div>
+
+      <div class="title">History</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Geography -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png">
+      </div>
+
+      <div class="title">Geography</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Economics -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
+      </div>
+
+      <div class="title">Economics</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Political Science -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
+      </div>
+
+      <div class="title">Political Science</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Commerce -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png">
+      </div>
+
+      <div class="title">Commerce</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Art & Design -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png">
+      </div>
+
+      <div class="title">Art & Design</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
