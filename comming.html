@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Coming Soon</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#001f4d,#0059b3,#00aaff);
+    overflow:hidden;
+    position:relative;
+}
+
+/* Background Circles */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:rgba(255,255,255,.08);
+    border-radius:50%;
+    top:-150px;
+    left:-120px;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    background:rgba(255,255,255,.06);
+    border-radius:50%;
+    bottom:-120px;
+    right:-100px;
+}
+
+/* Card */
+
+.card{
+    width:90%;
+    max-width:700px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:50px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 15px 35px rgba(0,0,0,.3);
+    z-index:1;
+}
+
+/* Icon */
+
+.icon{
+    font-size:90px;
+    animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* Title */
+
+h1{
+    color:white;
+    font-size:50px;
+    margin-top:20px;
+    margin-bottom:15px;
+    font-weight:800;
+}
+
+/* Text */
+
+p{
+    color:#dbeafe;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* Button */
+
+button{
+    padding:15px 40px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(to right,#00aaff,#0077ff);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:36px;
+}
+
+p{
+font-size:16px;
+}
+
+.card{
+padding:35px 25px;
+}
+
+.icon{
+font-size:70px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="icon">🚧</div>
+
+<h1>Coming Soon</h1>
+
+<p>
+We're working hard to bring this feature to you.
+Our team is building something amazing for your career journey.
+Please check back soon!
+</p>
+
+<button onclick="history.back()">← Go Back</button>
+
+</div>
+
+</body>
+</html>
