@@ -125,10 +125,9 @@ body::after{
 
 .subject-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  grid-template-columns:repeat(4,1fr);
   gap:35px;
 }
-
 /* Card */
 
 .card{
@@ -246,7 +245,19 @@ body::after{
 
 /* Responsive */
 
-@media(max-width:768px){
+@media(max-width:992px){
+
+  .subject-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:600px){
+
+  .subject-grid{
+    grid-template-columns:1fr;
+  }
 
   .heading h1{
     font-size:40px;
@@ -347,20 +358,6 @@ body::after{
 
     </div>
 
-    <!-- Computer Science -->
-
-    <div class="card">
-
-      <div class="circle">
-        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png">
-      </div>
-
-      <div class="title">Computer Science</div>
-
-      <button class="btn">Explore</button>
-
-    </div>
-
     <!-- English -->
 
     <div class="card">
@@ -402,62 +399,21 @@ body::after{
       <button class="btn">Explore</button>
 
     </div>
+    <!-- Bengali -->
 
-    <!-- Economics -->
+<div class="card">
 
-    <div class="card">
+  <div class="circle">
+    <img src="https://cdn-icons-png.flaticon.com/512/3976/3976626.png" alt="Bengali">
+  </div>
 
-      <div class="circle">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png">
-      </div>
+  <div class="title">Bengali</div>
 
-      <div class="title">Economics</div>
+  <button class="btn" onclick="window.location.href='bengali.html'">
+    Explore
+  </button>
 
-      <button class="btn">Explore</button>
-
-    </div>
-
-    <!-- Political Science -->
-
-    <div class="card">
-
-      <div class="circle">
-        <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png">
-      </div>
-
-      <div class="title">Political Science</div>
-
-      <button class="btn">Explore</button>
-
-    </div>
-
-    <!-- Commerce -->
-
-    <div class="card">
-
-      <div class="circle">
-        <img src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png">
-      </div>
-
-      <div class="title">Commerce</div>
-
-      <button class="btn">Explore</button>
-
-    </div>
-
-    <!-- Art & Design -->
-
-    <div class="card">
-
-      <div class="circle">
-        <img src="https://cdn-icons-png.flaticon.com/512/1829/1829586.png">
-      </div>
-
-      <div class="title">Art & Design</div>
-
-      <button class="btn">Explore</button>
-
-    </div>
+</div>
 
   </div>
 
