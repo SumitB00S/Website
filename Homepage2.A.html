@@ -3,38 +3,401 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Dream Career Portal</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{min-height:100vh;background:linear-gradient(135deg,#001f4d,#0059b3,#00aaff);overflow-x:hidden}
-.container{max-width:1400px;margin:auto;padding:60px 30px}
-.heading{text-align:center;margin-bottom:60px}
-.heading h1{font-size:60px;color:#fff}
-.heading p{color:#dbeafe;font-size:20px;margin-top:15px}
-.career-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
-.card{background:rgba(255,255,255,.12);backdrop-filter:blur(12px);border-radius:30px;padding:30px;border:1px solid rgba(255,255,255,.2);text-align:center;transition:.3s}
-.card:hover{transform:translateY(-10px)}
-.circle{width:140px;height:140px;border-radius:50%;background:#fff;margin:0 auto 20px;display:flex;align-items:center;justify-content:center}
-.circle img{width:85px;height:85px;object-fit:contain}
-.title{font-size:28px;color:#fff;font-weight:700}
-.btn{display:block;margin-top:20px;padding:14px;border-radius:12px;text-decoration:none;background:#009dff;color:#fff;font-weight:600}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#001f4d,#0059b3,#00aaff);
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* Animated Background */
+
+body::before{
+  content:'';
+  position:absolute;
+  width:700px;
+  height:700px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-250px;
+  right:-200px;
+  animation:move1 8s infinite alternate;
+}
+
+body::after{
+  content:'';
+  position:absolute;
+  width:500px;
+  height:500px;
+  background:rgba(255,255,255,0.05);
+  border-radius:50%;
+  bottom:-180px;
+  left:-120px;
+  animation:move2 8s infinite alternate;
+}
+
+@keyframes move1{
+  from{
+    transform:translateY(0px);
+  }
+  to{
+    transform:translateY(40px);
+  }
+}
+
+@keyframes move2{
+  from{
+    transform:translateX(0px);
+  }
+  to{
+    transform:translateX(50px);
+  }
+}
+
+/* Container */
+
+.container{
+  width:100%;
+  max-width:1400px;
+  margin:auto;
+  padding:60px 30px;
+  position:relative;
+  z-index:10;
+}
+
+/* Heading */
+
+.heading{
+  text-align:center;
+  margin-bottom:70px;
+}
+
+.heading h1{
+  font-size:70px;
+  color:white;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+
+  text-shadow:
+  0 0 15px rgba(255,255,255,0.5),
+  0 0 35px rgba(0,255,255,0.4);
+
+  animation:glow 2s infinite alternate;
+}
+
+.heading p{
+  margin-top:18px;
+  font-size:20px;
+  color:#dbeafe;
+  letter-spacing:1px;
+}
+
+@keyframes glow{
+  from{
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px #00c3ff;
+  }
+
+  to{
+    text-shadow:
+    0 0 20px #fff,
+    0 0 45px #00e1ff;
+  }
+}
+
+/* Career Grid */
+
+.career-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+}
+
+/* Cards */
+
+.card{
+  position:relative;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(14px);
+  border-radius:35px;
+  padding:35px 25px;
+  overflow:hidden;
+  transition:0.4s;
+  border:1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+  0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card:hover{
+  transform:translateY(-15px) scale(1.04);
+
+  box-shadow:
+  0 0 30px rgba(255,255,255,0.4),
+  0 0 60px rgba(0,170,255,0.3);
+}
+
+/* Light Effect */
+
+.card::before{
+  content:'';
+  position:absolute;
+  width:180px;
+  height:180px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+  top:-60px;
+  right:-60px;
+}
+
+/* Icon Circle */
+
+.circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  margin:auto;
+
+  background:linear-gradient(135deg,#ffffff,#dbeafe);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:
+  0 10px 25px rgba(255,255,255,0.35);
+
+  animation:float 3s ease-in-out infinite;
+}
+
+.circle img{
+  width:90px;
+  height:90px;
+  object-fit:contain;
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+/* Title */
+
+.title{
+  text-align:center;
+  margin-top:28px;
+  color:white;
+  font-size:28px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* Button */
+
+.btn{
+  margin-top:22px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(to right,#00aaff,#0077ff);
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:linear-gradient(to right,#0077ff,#00c3ff);
+  transform:scale(1.05);
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+  .heading h1{
+    font-size:42px;
+  }
+
+  .heading p{
+    font-size:16px;
+  }
+
+  .circle{
+    width:120px;
+    height:120px;
+  }
+
+  .circle img{
+    width:70px;
+    height:70px;
+  }
+
+}
+
 </style>
 </head>
+
 <body>
+
 <div class="container">
-<div class="heading">
-<h1>✨ Choose Your Dream ✨</h1>
-<p>Discover Your Perfect Career Path</p>
+
+  <!-- Heading -->
+
+  <div class="heading">
+
+    <h1>✨ Choose Your Dream ✨</h1>
+
+    <p>
+      Discover Your Perfect Career Path
+    </p>
+
+  </div>
+
+  <!-- Career Cards -->
+
+  <div class="career-grid">
+
+    <!-- Doctor -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/2785/2785482.png">
+      </div>
+
+      <div class="title">Doctor</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Engineer -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+      </div>
+
+      <div class="title">Engineer</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Teacher -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201818.png">
+      </div>
+
+      <div class="title">Teacher</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Lawyer -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+      </div>
+
+      <div class="title">Lawyer</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://img.icons8.com/fluency/96/soldier.png" alt="Army">
+      </div>
+
+      <div class="title">Army</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <!-- Pilot -->
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://img.icons8.com/color/96/airplane-take-off.png">
+      </div>
+
+      <div class="title">Pilot</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/4205/4205906.png" alt="Police">
+      </div>
+
+      <div class="title">Police</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+    <div class="card">
+
+      <div class="circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Computer Science">
+      </div>
+
+      <div class="title">Computer Science</div>
+
+      <button class="btn">Explore</button>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="career-grid">
-<div class="card"><div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/2785/2785482.png" alt="Doctor"></div><div class="title">Doctor</div><a class="btn" href="doctor.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png" alt="Engineer"></div><div class="title">Engineer</div><a class="btn" href="engineer.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/201/201818.png" alt="Teacher"></div><div class="title">Teacher</div><a class="btn" href="teacher.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" alt="Lawyer"></div><div class="title">Lawyer</div><a class="btn" href="lawyer.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://img.icons8.com/color/96/airplane-take-off.png" alt="Pilot"></div><div class="title">Pilot</div><a class="btn" href="pilot.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://img.icons8.com/fluency/96/soldier.png" alt="Army"></div><div class="title">Army</div><a class="btn" href="army.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/4205/4205906.png" alt="Police"></div><div class="title">Police</div><a class="btn" href="police.html">Explore</a></div>
-<div class="card"><div class="circle"><img src="https://cdn-icons-png.flaticon.com/512/6062/6062646.png" alt="Computer Science"></div><div class="title">Computer Science</div><a class="btn" href="computer_science.html">Explore</a></div>
-</div></div></body></html>
+</body>
+</html>
