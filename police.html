@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Police Career Details</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,#001f4d,#0059b3,#00aaff);
+  overflow-x:hidden;
+  padding:50px 20px;
+}
+
+/* Container */
+
+.container{
+  width:100%;
+  max-width:1300px;
+  margin:auto;
+}
+
+/* Hero Section */
+
+.hero{
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(14px);
+  border-radius:35px;
+  padding:50px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:40px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.15);
+}
+
+/* Left */
+
+.left{
+  flex:1;
+}
+
+.tag{
+  display:inline-block;
+  background:rgba(255,255,255,0.18);
+  color:white;
+  padding:10px 20px;
+  border-radius:30px;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+.left h1{
+  color:white;
+  font-size:65px;
+  font-weight:800;
+  line-height:1.2;
+  margin-bottom:25px;
+  text-shadow:0 0 12px rgba(255,255,255,0.35);
+}
+
+.left p{
+  color:#dbeafe;
+  font-size:18px;
+  line-height:1.9;
+  margin-bottom:30px;
+}
+
+/* Buttons */
+
+.btns{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:15px 30px;
+  border:none;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.primary{
+  background:linear-gradient(to right,#00aaff,#0077ff);
+  color:white;
+}
+
+.secondary{
+  background:white;
+  color:#0059b3;
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.03);
+}
+
+/* Right Image */
+
+.right{
+  flex:1;
+  text-align:center;
+}
+
+.right img{
+  width:100%;
+  max-width:450px;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-12px);}
+  100%{transform:translateY(0px);}
+}
+
+/* DETAILS SECTION */
+
+.details{
+  margin-top:45px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* BOX */
+
+.box{
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(14px);
+  border-radius:28px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,0.15);
+  transition:0.4s;
+}
+
+.box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 25px rgba(255,255,255,0.2);
+}
+
+.box h2{
+  color:white;
+  margin-bottom:20px;
+  font-size:28px;
+}
+
+.box ul{
+  list-style:none;
+}
+
+.box ul li{
+  color:#dbeafe;
+  margin-bottom:15px;
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* Salary */
+
+.salary{
+  font-size:38px;
+  font-weight:800;
+  color:white;
+  margin-top:15px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    padding:35px 25px;
+  }
+
+  .left h1{
+    font-size:42px;
+  }
+
+  .left p{
+    font-size:16px;
+  }
+
+  .btns{
+    justify-content:center;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <div class="left">
+
+      <div class="tag">
+        👮 Police Career
+      </div>
+
+      <h1>
+        Join Indian Police
+      </h1>
+
+      <p>
+        A Police career offers respect, responsibility and service to society.
+        You can join through state police exams, SSC GD, SI exams and other recruitment processes.
+      </p>
+
+      <div class="btns">
+        <button class="btn primary">Start Journey</button>
+        <button class="btn secondary">Watch Police Guide</button>
+      </div>
+
+    </div>
+
+    <div class="right">
+
+      <img src="https://images.unsplash.com/photo-1590608897129-79da98d15969?q=80&w=1200&auto=format&fit=crop" alt="Police">
+
+    </div>
+
+  </div>
+
+  <!-- DETAILS -->
+
+  <div class="details">
+
+    <div class="box">
+
+      <h2>📚 Qualification</h2>
+
+      <ul>
+        <li>✔ 10th / 12th Pass</li>
+        <li>✔ Graduation (SI/Officer)</li>
+        <li>✔ Police Exams (SSC, State Police)</li>
+        <li>✔ Physical Fitness</li>
+      </ul>
+
+    </div>
+
+    <div class="box">
+
+      <h2>⭐ Skills Needed</h2>
+
+      <ul>
+        <li>✔ Discipline</li>
+        <li>✔ Physical Strength</li>
+        <li>✔ Quick Decision Making</li>
+        <li>✔ Communication Skills</li>
+      </ul>
+
+    </div>
+
+    <div class="box">
+
+      <h2>💰 Salary</h2>
+
+      <div class="salary">₹25K - ₹1.5L+</div>
+
+      <ul style="margin-top:20px;">
+        <li>✔ Government Job</li>
+        <li>✔ Allowances</li>
+        <li>✔ Job Security</li>
+      </ul>
+
+    </div>
+
+    <div class="box">
+
+      <h2>🚀 Future Opportunities</h2>
+
+      <ul>
+        <li>✔ Constable</li>
+        <li>✔ Sub Inspector</li>
+        <li>✔ DSP / Officer</li>
+        <li>✔ Cyber Crime Officer</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
